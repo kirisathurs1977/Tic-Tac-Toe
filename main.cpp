@@ -7,8 +7,15 @@ char turn = 'X';
 bool draw = false;
 char board[3][3]={{'1','2','3'},{'4','5','6'},{'7','8','9'}};
 bool gameover(){
-    
-}
+       for (row=0;row<ROW_COUNT ; row++)
+        //checking the win for Simple Rows and Simple Column
+          if( board[row][0]==board[row][1] && board[row][0]==board[row][2]  || board[0][row]==board[1][row] && board[0][row]==board[2][row])
+               return false;
+       //checking the win for both diagonal
+          else if (board[0][0]==board[1][1] && board[0][0]==board[2][2] || board[0][2]==board[1][1] == board[0][2]==board[2][0] )
+            return false;
+       
+  }
 void display_board(){
 
     //Rander Game Board LAYOUT
